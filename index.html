@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#0b0d12">
   <meta name="description" content="Engineering portfolio showcasing projects, technical skills, and experience.">
-  <title>Kotla Rohith Kumar Reddy — Engineer Portfolio</title>
+  <title>Kotla Rohith Kumar Reddy — Data Analyst &amp; AI Engineer</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -108,7 +108,7 @@
       <div class="wrap">
         <div class="contact-grid">
           <div class="reveal"><div class="kicker">05 / Contact</div><h2>Have an opportunity<br>or an idea?</h2><p class="section-intro">I'd be happy to connect, discuss projects, and explore ways to work together.</p></div>
-          <div class="contact-card reveal"><div class="contact-links">
+          <div class="contact-card reveal"><div class="contact-links"><a class="contact-link" href="resume.pdf" target="_blank" rel="noreferrer"><span>↓</span><div><strong>Resume PDF</strong><span>View or download my resume</span></div></a>
             <a class="contact-link" href="mailto:kotlarohith1234@gmail.com"><span>✉</span><div><strong>Email me</strong><span>kotlarohith1234@gmail.com</span></div></a>
             <a class="contact-link" href="https://www.linkedin.com/in/kotla-rohith-78a1a3293" target="_blank" rel="noreferrer"><span>↗</span><div><strong>LinkedIn</strong><span>View my LinkedIn profile</span></div></a>
             <a class="contact-link" href="https://github.com/Rohith-18krkr" target="_blank" rel="noreferrer"><span>⌘</span><div><strong>GitHub</strong><span>github.com/Rohith-18krkr</span></div></a>
@@ -130,6 +130,12 @@
       navLinks.classList.remove('open'); menuBtn.setAttribute('aria-expanded','false'); menuBtn.textContent='☰';
     }));
     document.getElementById('year').textContent = new Date().getFullYear();
+    const profilePhoto = document.getElementById('profilePhoto');
+    const profileFallback = document.getElementById('profileFallback');
+    if (profilePhoto && profileFallback) {
+      profilePhoto.addEventListener('load', () => { profilePhoto.style.display='block'; profileFallback.style.display='none'; });
+      profilePhoto.addEventListener('error', () => { profilePhoto.style.display='none'; profileFallback.style.display='grid'; });
+    }
     const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => { if(entry.isIntersecting){ entry.target.classList.add('visible'); observer.unobserve(entry.target); } });
     }, {threshold:0.12});
